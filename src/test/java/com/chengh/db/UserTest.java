@@ -31,7 +31,6 @@ public class UserTest {
     public void save() {
         for (Integer i = 0; i < 100; i++) {
             User user = new User();
-            //user.setId(i.longValue());
             user.setName("chengh" + i);
             user.setSex(i % 2);
             user.setPhone("12345678910");
