@@ -1,7 +1,5 @@
 package com.chengh.db;
 
-import java.util.Date;
-
 import javax.annotation.Resource;
 
 import org.junit.Test;

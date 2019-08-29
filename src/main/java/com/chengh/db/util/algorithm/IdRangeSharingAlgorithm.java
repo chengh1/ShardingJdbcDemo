@@ -3,11 +3,9 @@ package com.chengh.db.util.algorithm;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Range;
-import io.shardingsphere.api.algorithm.sharding.PreciseShardingValue;
+
 import io.shardingsphere.api.algorithm.sharding.RangeShardingValue;
-import io.shardingsphere.api.algorithm.sharding.standard.PreciseShardingAlgorithm;
 import io.shardingsphere.api.algorithm.sharding.standard.RangeShardingAlgorithm;
 
 /**

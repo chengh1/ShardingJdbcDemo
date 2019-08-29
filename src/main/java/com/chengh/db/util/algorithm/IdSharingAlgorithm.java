@@ -1,10 +1,9 @@
 package com.chengh.db.util.algorithm;
 
-import com.alibaba.fastjson.JSON;
+import java.util.Collection;
+
 import io.shardingsphere.api.algorithm.sharding.PreciseShardingValue;
 import io.shardingsphere.api.algorithm.sharding.standard.PreciseShardingAlgorithm;
-
-import java.util.Collection;
 
 /**
  * @program: ShardingJdbcDemo
