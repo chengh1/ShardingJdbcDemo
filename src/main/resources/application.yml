@@ -30,7 +30,7 @@ sharding:
           t_user:  #t_user表
             key-generator-column-name: id  #主键
             actual-data-nodes: ds${0..1}.t_user${0..2}    #数据节点,均匀分布
-            database-strategy:  #分表策略
+            database-strategy:  #分库策略
               inline: #行表达式
                 sharding-column: id        #列名称，多个列以逗号分隔
                 algorithm-expression: ds${id % 2}    #按模运算分配
@@ -42,3 +42,4 @@ sharding:
                 precise-algorithm-class-name: com.chengh.db.util.algorithm.IdSharingAlgorithm
                 range-algorithm-class-name: com.chengh.db.util.algorithm.IdRangeSharingAlgorithm
         default-key-generator-class-name: com.chengh.db.util.IdGenerator
+        default-data-source-name: ds1

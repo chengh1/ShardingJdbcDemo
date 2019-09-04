@@ -6,7 +6,7 @@
         INSERT INTO t_user(name,phone,email,sex,password)
         VALUES
         (
-            #{name},#{phone},#{email},#{sex},#{password}
+        #{name},#{phone},#{email},#{sex},#{password}
         )
     </insert>
 
@@ -16,6 +16,13 @@
         <!--        <foreach collection="ids" item="id" separator="," open="(" close=")">-->
         <!--            #{id}-->
         <!--        </foreach>-->
+    </select>
+
+    <select id="getByIds" parameterType="long" resultType="com.chengh.db.entity.User">
+        select * from t_user where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
     </select>
 
 </mapper>

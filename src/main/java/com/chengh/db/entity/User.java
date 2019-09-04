@@ -24,6 +24,29 @@ public class User {
 
     private Date createTime;
 
+    public User(){}
+
+
+    /**
+     *
+     * @param id
+     * @param name
+     * @param phone
+     * @param email
+     * @param password
+     * @param sex
+     * @param createTime
+     */
+    public User(Long id, String name, String phone, String email, String password, Integer sex, Date createTime) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.sex = sex;
+        this.createTime = createTime;
+    }
+
     public Long getId() {
         return id;
     }

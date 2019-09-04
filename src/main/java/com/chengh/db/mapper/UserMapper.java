@@ -18,6 +18,13 @@ public interface UserMapper {
      * @param id
      * @return
      */
-    List<User> getById(@Param("id")Long id);
+    User getById(@Param("id")Long id);
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    List<User> getByIds(@Param("ids")List<Long> id);
 }
 
