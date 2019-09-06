@@ -20,17 +20,25 @@
         </foreach>
     </insert>
 
-    <select id="getById" parameterType="long" resultType="com.chengh.db.entity.User">
+    <select id="getByUserId" parameterType="long" resultType="com.chengh.db.entity.User">
         select user_id userId,name,sex,phone,email,password,create_time createTime
-        from t_user where user_id = #{id}
+        from t_user
+        where user_id = #{id}
     </select>
 
     <select id="getByIds" parameterType="long" resultType="com.chengh.db.entity.User">
         select user_id userId,name,sex,phone,email,password,create_time createTime
-        from t_user where user_id in
+        from t_user
+        where user_id in
         <foreach collection="ids" item="id" separator="," open="(" close=")">
             #{id}
         </foreach>
+    </select>
+
+    <select id="getByName" resultType="com.chengh.db.entity.User">
+        select user_id userId,name,sex,phone,email,password,create_time createTime
+        from t_user
+        where name = #{name}
     </select>
 
 </mapper>

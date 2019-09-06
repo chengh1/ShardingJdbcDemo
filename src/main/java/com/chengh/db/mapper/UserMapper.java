@@ -24,13 +24,20 @@ public interface UserMapper {
      * @param id
      * @return
      */
-    User getById(@Param("id")Long id);
+    User getByUserId(@Param("id")Long id);
 
     /**
-     *
+     * 批量查询
      * @param id
      * @return
      */
     List<User> getByIds(@Param("ids")List<Long> id);
+
+    /**
+     *根据用户名查询
+     * @param name
+     * @return
+     */
+    User getByName(String name);
 }
 

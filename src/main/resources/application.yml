@@ -27,7 +27,7 @@ sharding:
         tables:
           t_user:
             key-generator-column-name: user_id
-            actual-data-nodes: ds${0..1}.t_user${0..2}    #数据节点,均匀分布
+            actual-data-nodes: ds${0..1}.t_user${0..2}    #数据节点,均匀分布ds0.t_user0   ds0.t_user1
             database-strategy:  #分库策略
               inline: #行表达式
                 sharding-column: user_id        #列名称，多个列以逗号分隔
@@ -49,6 +49,6 @@ sharding:
                 sharding-column: user_id
                 algorithm-expression: t_order${user_id % 3}
         default-key-generator-class-name: com.chengh.db.util.IdGenerator
-        #default-data-source-name: ds1
-        #binding-tables:
-        #  - t_order,t_user
+        default-data-source-name: ds1
+        binding-tables:
+          - t_order,t_user

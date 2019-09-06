@@ -39,4 +39,9 @@ public class Goods implements Serializable {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Goods{" + "id=" + id + ", name='" + name + '\'' + ", price=" + price + '}';
+    }
 }

@@ -59,4 +59,10 @@ public class OrderInfo {
     public void setPayTime(Date payTime) {
         this.payTime = payTime;
     }
+
+    @Override
+    public String toString() {
+        return "OrderInfo{" + "id=" + id + ", userId=" + userId + ", name='" + name + '\'' + ", payMoney=" + payMoney
+                + ", payTime=" + payTime + '}';
+    }
 }
