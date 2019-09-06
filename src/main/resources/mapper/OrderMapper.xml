@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chengh.db.mapper.OrderMapper">
+
+    <insert id="save" parameterType="com.chengh.db.entity.Order">
+        INSERT INTO t_order(user_id,pay_money,pay_time)
+        VALUES
+        (
+        #{userId},#{payMoney},#{payTime}
+        )
+    </insert>
+
+    <select id="getById" parameterType="long" resultType="com.chengh.db.entity.Order">
+        select * from t_order where id = #{id}
+    </select>
+
+    <select id="getOrderInfoByUserId" parameterType="long" resultType="com.chengh.db.entity.OrderInfo">
+        select
+        t1.id, t1.user_id userId, t1.pay_money payMoney, t1.pay_time payTime,t2.name
+        from t_order t1 join t_user t2 on t1.user_id = t2.user_id
+        where t1.user_id = #{userId}
+    </select>
+
+</mapper>

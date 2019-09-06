@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class User {
 
-    private Long id;
+    private Long userId;
 
     private String name;
 
@@ -24,12 +24,12 @@ public class User {
 
     private Date createTime;
 
-    public User(){}
+    public User() {}
 
 
     /**
      *
-     * @param id
+     * @param userId
      * @param name
      * @param phone
      * @param email
@@ -37,8 +37,8 @@ public class User {
      * @param sex
      * @param createTime
      */
-    public User(Long id, String name, String phone, String email, String password, Integer sex, Date createTime) {
-        this.id = id;
+    public User(Long userId, String name, String phone, String email, String password, Integer sex, Date createTime) {
+        this.userId = userId;
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -47,12 +47,12 @@ public class User {
         this.createTime = createTime;
     }
 
-    public Long getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -105,7 +105,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name='" + name + '\'' + ", phone='" + phone + '\'' + ", email='" + email + '\''
-                + ", password='" + password + '\'' + ", sex='" + sex + '\'' + ", createTime=" + createTime + '}';
+        return "User{" + "userId=" + userId + ", name='" + name + '\'' + ", phone='" + phone + '\'' + ", email='"
+                + email + '\'' + ", password='" + password + '\'' + ", sex='" + sex + '\'' + ", createTime="
+                + createTime + '}';
     }
 }

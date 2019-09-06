@@ -14,6 +14,12 @@ public interface UserMapper {
     void save(User user);
 
     /**
+     * 批量保存
+     * @param users
+     */
+    void batchSave(@Param("users") List<User> users);
+
+    /**
      * 查询
      * @param id
      * @return

@@ -10,16 +10,24 @@
         )
     </insert>
 
+    <insert id="batchSave">
+        INSERT INTO t_user(name,phone,email,sex,password)
+        VALUES
+        <foreach collection="users" separator="," item="user">
+        (
+        #{user.name},#{user.phone},#{user.email},#{user.sex},#{user.password}
+        )
+        </foreach>
+    </insert>
+
     <select id="getById" parameterType="long" resultType="com.chengh.db.entity.User">
-        select * from t_user where id = #{id}
-        <!--        in-->
-        <!--        <foreach collection="ids" item="id" separator="," open="(" close=")">-->
-        <!--            #{id}-->
-        <!--        </foreach>-->
+        select user_id userId,name,sex,phone,email,password,create_time createTime
+        from t_user where user_id = #{id}
     </select>
 
     <select id="getByIds" parameterType="long" resultType="com.chengh.db.entity.User">
-        select * from t_user where id in
+        select user_id userId,name,sex,phone,email,password,create_time createTime
+        from t_user where user_id in
         <foreach collection="ids" item="id" separator="," open="(" close=")">
             #{id}
         </foreach>
